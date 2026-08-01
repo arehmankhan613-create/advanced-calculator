@@ -214,3 +214,34 @@ expression=display.value;
 }
 
 });
+const standardTab = document.getElementById("standardTab");
+const scienceTab = document.getElementById("scienceTab");
+const currencyTab = document.getElementById("currencyTab");
+
+const calculatorButtons = document.querySelector(".buttons");
+const scientificPanel = document.getElementById("scientificPanel");
+const currencyPanel = document.getElementById("currencyPanel");
+
+standardTab.onclick = () => {
+
+    calculatorButtons.style.display = "grid";
+    scientificPanel.style.display = "none";
+    currencyPanel.style.display = "none";
+
+};
+
+scienceTab.onclick = () => {
+
+    calculatorButtons.style.display = "none";
+    scientificPanel.style.display = "block";
+    currencyPanel.style.display = "none";
+
+};
+
+currencyTab.onclick = () => {
+
+    calculatorButtons.style.display = "none";
+    scientificPanel.style.display = "none";
+    currencyPanel.style.display = "block";
+
+};
