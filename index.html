@@ -71,7 +71,98 @@ id="display"
 placeholder="0"
 readonly>
 
-<div class="buttons" id="calculatorButtons">
+<div class="buttons" id="calculatorButtons"><button class="operator">AC</button>
+<button class="operator">⌫</button>
+<button class="operator">%</button>
+<button class="operator">÷</button>
+
+<button>7</button>
+<button>8</button>
+<button>9</button>
+<button class="operator">×</button>
+
+<button>4</button>
+<button>5</button>
+<button>6</button>
+<button class="operator">−</button>
+
+<button>1</button>
+<button>2</button>
+<button>3</button>
+<button class="operator">+</button>
+
+<button>.</button>
+<button>0</button>
+<button>=</button>
+<button class="operator">Copy</button>
+
+</div>
+
+<!-- Scientific Calculator -->
+
+<div id="scientificPanel" class="hidden">
+
+<div class="science-grid">
+
+<button>√</button>
+<button>x²</button>
+<button>x³</button>
+<button>1/x</button>
+
+<button>sin</button>
+<button>cos</button>
+<button>tan</button>
+<button>log</button>
+
+<button>ln</button>
+<button>π</button>
+<button>e</button>
+<button>!</button>
+
+</div>
+
+</div>
+
+<!-- Currency Converter -->
+
+<div id="currencyPanel" class="hidden">
+
+<h3>💱 Currency Converter</h3>
+
+<input
+type="number"
+id="amount"
+placeholder="Enter Amount">
+
+<select id="fromCurrency">
+
+<option>INR</option>
+<option>USD</option>
+<option>EUR</option>
+<option>AED</option>
+<option>GBP</option>
+
+</select>
+
+<select id="toCurrency">
+
+<option>USD</option>
+<option>INR</option>
+<option>EUR</option>
+<option>AED</option>
+<option>GBP</option>
+
+</select>
+
+<button id="convertBtn">
+Convert
+</button>
+
+<h2 id="currencyResult">
+0.00
+</h2>
+
+</div>
 <div class="container">
 
     <div class="calculator">
