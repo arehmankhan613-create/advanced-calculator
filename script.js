@@ -245,3 +245,25 @@ currencyTab.onclick = () => {
     currencyPanel.style.display = "block";
 
 };
+const rates = {
+    INR: 1,
+    USD: 83.5,
+    EUR: 98.2,
+    AED: 22.7,
+    GBP: 113.4
+};
+
+document.getElementById("convertBtn").onclick = () => {
+
+    const amount = Number(document.getElementById("amount").value);
+
+    const from = document.getElementById("fromCurrency").value;
+
+    const to = document.getElementById("toCurrency").value;
+
+    const result = (amount * rates[from]) / rates[to];
+
+    document.getElementById("currencyResult").innerHTML =
+        result.toFixed(2) + " " + to;
+
+};
