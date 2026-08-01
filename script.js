@@ -1,57 +1,87 @@
 const display = document.getElementById("display");
 const buttons = document.querySelectorAll(".buttons button");
 const historyList = document.getElementById("historyList");
+const clearHistory = document.getElementById("clearHistory");
+const themeBtn = document.getElementById("themeBtn");
+
+let expression = "";
+let darkMode = true;
 
 buttons.forEach(button => {
     button.addEventListener("click", () => {
 
-        let value = button.innerText;
+        const value = button.innerText;
 
         if (value === "AC") {
+            expression = "";
             display.value = "";
+            return;
         }
 
-        else if (value === "⌫") {
-            display.value = display.value.slice(0, -1);
+        if (value === "⌫") {
+            expression = expression.slice(0, -1);
+            display.value = expression;
+            return;
         }
 
-        else if (value === "=") {
+        if (value === "Copy") {
+            navigator.clipboard.writeText(display.value);
+            alert("Copied Successfully");
+            return;
+        }
+
+        if (value === "=") {
 
             try {
 
-                let expression = display.value
+                let exp = expression
                     .replace(/×/g, "*")
                     .replace(/÷/g, "/")
                     .replace(/−/g, "-");
 
-                let result = eval(expression);
+                let answer = eval(exp);
 
-                historyList.innerHTML += `<li>${display.value} = ${result}</li>`;
+                historyList.innerHTML += `
+                    <li>${expression} = ${answer}</li>
+                `;
 
-                display.value = result;
+                display.value = answer;
+                expression = answer.toString();
 
             } catch {
 
                 display.value = "Error";
+                expression = "";
 
             }
 
+            return;
         }
 
-        else if (value === "Copy") {
-
-            navigator.clipboard.writeText(display.value);
-
-            alert("Copied!");
-
-        }
-
-        else {
-
-            display.value += value;
-
-        }
+        expression += value;
+        display.value = expression;
 
     });
-
 });
+
+clearHistory.onclick = () => {
+    historyList.innerHTML = "";
+};
+
+themeBtn.onclick = () => {
+
+    darkMode = !darkMode;
+
+    if (darkMode) {
+
+        document.body.style.background =
+        "linear-gradient(135deg,#0f172a,#1e293b)";
+
+    } else {
+
+        document.body.style.background =
+        "linear-gradient(135deg,#dbeafe,#f8fafc)";
+
+    }
+
+};
