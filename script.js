@@ -63,7 +63,7 @@ buttons.forEach(button => {
 
                 let answer = eval(exp);
 
-                historyList.innerHTML += `
+                saveHistory(expression, answer); += `
                     <li>${expression} = ${answer}</li>
                 `;
 
@@ -86,9 +86,6 @@ buttons.forEach(button => {
     });
 });
 
-clearHistory.onclick = () => {
-    historyList.innerHTML = "";
-};
 
 themeBtn.onclick = () => {
 
@@ -127,7 +124,7 @@ document.addEventListener("keydown", (e) => {
 
             let answer = eval(exp);
 
-            historyList.innerHTML +=
+            saveHistory(expression, answer); +=
             `<li>${expression} = ${answer}</li>`;
 
             display.value = answer;
