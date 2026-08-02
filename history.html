@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculation History</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="history">
+
+<div class="history-header">
+<h2>History</h2>
+
+<button onclick="goBack()">
+Back
+</button>
+
+</div>
+
+<ul id="historyList"></ul>
+
+<button id="clearHistory">
+Clear History
+</button>
+
+</div>
+
+
+<script>
+
+const historyList=document.getElementById("historyList");
+
+let history =
+JSON.parse(localStorage.getItem("calcHistory")) || [];
+
+
+history.forEach(item=>{
+
+let li=document.createElement("li");
+
+li.innerHTML =
+item.expression+" = "+item.answer+
+"<br><small>"+item.time+"</small>";
+
+historyList.appendChild(li);
+
+});
+
+
+document.getElementById("clearHistory").onclick=()=>{
+
+localStorage.removeItem("calcHistory");
+
+historyList.innerHTML="";
+
+};
+
+
+function goBack(){
+
+history.back();
+
+}
+
+</script>
+
+</body>
+</html>
