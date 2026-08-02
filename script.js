@@ -1,4 +1,26 @@
-const display = document.getElementById("display");
+// ======================
+// History Storage
+// ======================
+
+const historyBtn = document.getElementById("historyBtn");
+
+function saveHistory(expression, answer) {
+    let history = JSON.parse(localStorage.getItem("calcHistory")) || [];
+
+    history.unshift({
+        expression,
+        answer,
+        time: new Date().toLocaleString()
+    });
+
+    localStorage.setItem("calcHistory", JSON.stringify(history));
+}
+
+if (historyBtn) {
+    historyBtn.onclick = () => {
+        window.location.href = "history.html";
+    };
+}const display = document.getElementById("display");
 const buttons = document.querySelectorAll(".buttons button");
 const historyList = document.getElementById("historyList");
 const clearHistory = document.getElementById("clearHistory");
