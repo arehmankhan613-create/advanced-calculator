@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartCalc Pro</title>
 
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>SmartCalc Pro</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 </head>
 
 <body>
@@ -31,18 +31,18 @@ SmartCalc Pro
 
 <div class="top-buttons">
 
-<button id="historyBtn" title="History">
+<button id="historyBtn">
 <i class="fa-solid fa-clock-rotate-left"></i>
 </button>
 
-<button id="themeBtn" title="Theme">
+<button id="themeBtn">
 🌙
 </button>
 
 </div>
 
 </div>
-</div>
+
 
 <div class="tabs">
 
@@ -60,11 +60,9 @@ SmartCalc Pro
 
 </div>
 
-<input
-type="text"
-id="display"
-placeholder="0"
-readonly>
+
+<input id="display" readonly placeholder="0">
+
 
 <div class="buttons">
 
@@ -73,31 +71,35 @@ readonly>
 <button class="operator">%</button>
 <button class="operator">÷</button>
 
+
 <button>7</button>
 <button>8</button>
 <button>9</button>
 <button class="operator">×</button>
+
 
 <button>4</button>
 <button>5</button>
 <button>6</button>
 <button class="operator">−</button>
 
+
 <button>1</button>
 <button>2</button>
 <button>3</button>
 <button class="operator">+</button>
+
 
 <button>.</button>
 <button>0</button>
 <button>=</button>
 <button class="operator">Copy</button>
 
-</div>
-
-<!-- Scientific Calculator -->
+</div><!-- Scientific Calculator -->
 
 <div id="scientificPanel" class="hidden">
+
+<h3>🔬 Scientific Calculator</h3>
 
 <div class="science-grid">
 
@@ -109,7 +111,6 @@ readonly>
 <button>sin</button>
 <button>cos</button>
 <button>tan</button>
-
 <button>log</button>
 
 <button>ln</button>
@@ -121,16 +122,18 @@ readonly>
 
 </div>
 
+
 <!-- Currency Converter -->
 
 <div id="currencyPanel" class="hidden">
 
 <h3>💱 Currency Converter</h3>
 
-<input
+<input 
 type="number"
 id="amount"
 placeholder="Enter Amount">
+
 
 <select id="fromCurrency">
 
@@ -142,6 +145,7 @@ placeholder="Enter Amount">
 
 </select>
 
+
 <select id="toCurrency">
 
 <option>USD</option>
@@ -152,14 +156,21 @@ placeholder="Enter Amount">
 
 </select>
 
+
 <button id="convertBtn">
 Convert
 </button>
 
+
 <h2 id="currencyResult">
 0.00
 </h2>
-<!-- History Panel -->
+
+
+</div>
+
+
+</div>
 
 </div>
 
